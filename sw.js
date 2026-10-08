@@ -1,4 +1,5 @@
-const CACHE='training-dashboard-v1';
-const ASSETS=['./','./index.html','./manifest.json'];
+const CACHE='training-dashboard-v2';
+const ASSETS=['/Trainings-Dashboard/','/Trainings-Dashboard/index.html','/Trainings-Dashboard/manifest.json',
+'/Trainings-Dashboard/icons/icon-192.png','/Trainings-Dashboard/icons/icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
 self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
